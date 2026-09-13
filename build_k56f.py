@@ -420,7 +420,7 @@ for s in [-1,1]:
     rod('Rider_footpeg_'+str(s),(s*.145,-.175,.319),(s*.250,-.175,.319),.013,RUBBER)
     bracket('Pillion_step_bracket_'+str(s),[(s*.135,-.401,.606),(s*.144,-.514,.511),(s*.156,-.308,.490)])
     rod('Pillion_bracket_stay_'+str(s),(s*.135,-.401,.606),(s*.117,-.408,.612),.008,DARK,'08_HARDWARE')
-    rod('Pillion_bracket_stay2_'+str(s),(s*.156,-.308,.490),(s*.117,-.322,.560),.008,DARK,'08_HARDWARE')
+    rod('Pillion_bracket_stay2_'+str(s),(s*.156,-.308,.490),(s*.119,-.398,.600),.008,DARK,'08_HARDWARE')
     rod('Pillion_peg_'+str(s),(s*.146,-.401,.496),(s*.222,-.401,.496),.012,DARK)
     for y,z in [(-.401,.593),(-.316,.503)]:bolt('Pillion_bracket_bolt',s*.148,y,z,.006)
 tube('Gear_change_lever_L',[(-.161,-.151,.319),(-.173,-.080,.283),(-.188,.045,.292)],.006,STEEL)
