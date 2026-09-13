@@ -1,0 +1,10 @@
+# Blender backup
+*.blend1
+*.blend2
+
+# Local tooling (PDF inspection only, not needed to build)
+.tools/
+
+# Regenerable logs
+build.log
+render_review.log

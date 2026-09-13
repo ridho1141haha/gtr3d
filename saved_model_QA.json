@@ -1,0 +1,40 @@
+{
+  "checks": {
+    "metres": true,
+    "origin_identity": true,
+    "ground_z_zero": true,
+    "actual_axle_wheelbase_1284mm": true,
+    "FR_TIRE_90_80_17_ground_contact": true,
+    "FR_TIRE_90_80_17_width_OD": true,
+    "FR_TIRE_90_80_17_centred": true,
+    "RR_TIRE_120_70_17_ground_contact": true,
+    "RR_TIRE_120_70_17_width_OD": true,
+    "RR_TIRE_120_70_17_centred": true,
+    "actual_rider_seat_cage_780mm": true,
+    "all_reference_images_packed": true,
+    "all_vehicle_meshes_have_uv": true,
+    "all_vehicle_meshes_have_material": true,
+    "all_vehicle_meshes_unit_scale": true,
+    "no_prohibited_donor_object_names": true,
+    "script_embedded": true,
+    "evidence_embedded": true,
+    "six_review_cameras": true,
+    "no_sampled_body_tire_penetration": true
+  },
+  "details": {
+    "FR_TIRE_90_80_17": {
+      "width_m": 0.09000000357627869,
+      "diameter_m": 0.5758000016212463,
+      "ground_contact_z": 0.0
+    },
+    "RR_TIRE_120_70_17": {
+      "width_m": 0.11999999731779099,
+      "diameter_m": 0.5997999906539917,
+      "ground_contact_z": 0.0
+    },
+    "body_tire_sampling_suspects": []
+  },
+  "mesh_objects": 606,
+  "base_mesh_vertices": 49114,
+  "failed": []
+}
