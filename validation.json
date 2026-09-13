@@ -15,23 +15,23 @@
   ],
   "rider_seat_station_m": 0.78,
   "bounding_box_min_m": [
-    -0.3610219657421112,
-    -1.0977941751480103,
+    -0.3628000020980835,
+    -1.1811308860778809,
     0.0
   ],
   "bounding_box_max_m": [
-    0.3610219657421112,
-    0.9298999905586243,
+    0.3628000020980835,
+    0.930543065071106,
     1.099725604057312
   ],
   "envelope_width_length_height_m": [
-    0.7220439314842224,
-    2.0276941657066345,
+    0.725600004196167,
+    2.111673951148987,
     1.099725604057312
   ],
   "nonfinite_geometry": [],
   "zero_area_base_faces": [],
-  "objects": 638,
+  "objects": 1143,
   "known_limits": [
     "External reconstruction; internal engine/transmission omitted.",
     "Mount centres and hidden geometry inferred; not physically measured.",
@@ -119,6 +119,34 @@
     },
     {
       "name": "Seat_front_hinge",
+      "type": "MESH",
+      "collection": "01_CHASSIS",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Frame_rail_protector_L",
+      "type": "CURVE",
+      "collection": "01_CHASSIS",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Frame_rail_protector_R",
+      "type": "CURVE",
+      "collection": "01_CHASSIS",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Engine_mount_plate_L",
+      "type": "MESH",
+      "collection": "01_CHASSIS",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Engine_mount_plate_R",
       "type": "MESH",
       "collection": "01_CHASSIS",
       "vertices": 8,
@@ -633,6 +661,930 @@
       "type": "MESH",
       "collection": "02_FRONT_RUNNING_GEAR",
       "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Nissin_badge",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 2720,
+      "confidence": "Text decal \"NISSIN\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Fork_stanchion_gold_L",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 80,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Fork_seal_retainer_L",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 96,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Fork_gaiter_L",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 64,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Fork_stanchion_gold_R",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 80,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Fork_seal_retainer_R",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 96,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Fork_gaiter_R",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 64,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_Caliper_main",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_Caliper_piston_0",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 64,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_Caliper_piston_1",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 64,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_Caliper_pad_slot",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_Caliper_badge",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_Caliper_hose_nipple",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 32,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_000",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_000",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_000",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_001",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_002",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_002",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_002",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_003",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_004",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_004",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_004",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_005",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_006",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_006",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_006",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_007",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_008",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_008",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_008",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_009",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_010",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_010",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_010",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_011",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_012",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_012",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_012",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_013",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_014",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_014",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_014",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_015",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_016",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_016",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_016",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_017",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_018",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_018",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_018",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_019",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_020",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_020",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_020",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_021",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_022",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_022",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_022",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_023",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_024",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_024",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_024",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_025",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_026",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_026",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_026",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_038",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_038",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_038",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_039",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_040",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_040",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_040",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_041",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_042",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_042",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_042",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_043",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_044",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_044",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_044",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_045",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_046",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_046",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_046",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_047",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_048",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_048",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_048",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_049",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_050",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_050",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_050",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_051",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_052",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_052",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_052",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_053",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_054",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_054",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_054",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_055",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_056",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_056",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_056",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_057",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_058",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_058",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_058",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_059",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_060",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_060",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_060",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_061",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_-0.55_062",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_062",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.55_062",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_TreadV7_0.00_063",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_Reflector_amber_L",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_Reflector_amber_R",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_brake_hose_bracket",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_wheel_speed_sensor_wire",
+      "type": "CURVE",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "FR_Hub_center_cap",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 64,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_Hub_center_cap_L",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 64,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_Axle_nut_cover_L",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 48,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_Axle_nut_cover_R",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 48,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_Rim_lip_chrome",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 384,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "FR_Hub_chrome_ring",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 128,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_Hub_chrome_ring_L",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 128,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "FR_Valve_stem",
+      "type": "MESH",
+      "collection": "02_FRONT_RUNNING_GEAR",
+      "vertices": 24,
       "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
     },
     {
@@ -1175,6 +2127,1063 @@
       "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
     },
     {
+      "name": "RR_Caliper_main",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Caliper_piston_0",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 48,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Caliper_piston_1",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 48,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Caliper_pad_slot",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_000",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_000",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_000",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_001",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_002",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_002",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_002",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_003",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_004",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_004",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_004",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_005",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_006",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_006",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_006",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_007",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_008",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_008",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_008",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_009",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_010",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_010",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_010",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_011",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_012",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_012",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_012",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_013",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_014",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_014",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_014",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_015",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_016",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_016",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_016",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_017",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_018",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_018",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_018",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_019",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_020",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_020",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_020",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_021",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_022",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_022",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_022",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_023",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_024",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_024",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_024",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_025",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_026",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_026",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_026",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_027",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_028",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_028",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_028",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_029",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_030",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_030",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_030",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_031",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_032",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_032",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_032",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_033",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_047",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_048",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_048",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_048",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_049",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_050",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_050",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_050",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_051",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_052",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_052",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_052",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_053",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_054",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_054",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_054",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_055",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_056",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_056",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_056",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_057",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_058",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_058",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_058",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_059",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_060",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_060",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_060",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_061",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_062",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_062",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_062",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_063",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_064",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_064",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_064",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_065",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_066",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_066",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_066",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_067",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_068",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_068",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_068",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_069",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_070",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_070",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_070",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_071",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_072",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_072",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_072",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_073",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_074",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_074",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_074",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_075",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_076",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_076",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_076",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_077",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_-0.55_078",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_078",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.55_078",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_TreadV7_0.00_079",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_brake_hose_clip",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Hub_center_cap",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 64,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Hub_center_cap_L",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 64,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Axle_nut_cover_L",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 48,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Axle_nut_cover_R",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 48,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Rim_lip_chrome",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 384,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "RR_Hub_chrome_ring",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 128,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Hub_chrome_ring_L",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 128,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Valve_stem",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 24,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Axle_nut_L",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 12,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Axle_cotter_pin_L",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 16,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Axle_nut_R",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 12,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Axle_cotter_pin_R",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 16,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Swingarm_chain_slider_L",
+      "type": "MESH",
+      "collection": "03_REAR_RUNNING_GEAR",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
       "name": "Crankcase_core",
       "type": "MESH",
       "collection": "04_ENGINE_COOLING",
@@ -1642,6 +3651,272 @@
       "collection": "04_ENGINE_COOLING",
       "vertices": 24,
       "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "PGMFI_L",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 1910,
+      "confidence": "Text decal \"PGM-FI\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "DOHC_L",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 2600,
+      "confidence": "Text decal \"DOHC\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Engine_150cc_L",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 3740,
+      "confidence": "Text decal \"150cc\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Liquid_cooled_L",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 6320,
+      "confidence": "Text decal \"LIQUID COOLED\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "PGMFI_R",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 1910,
+      "confidence": "Text decal \"PGM-FI\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "DOHC_R",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 2600,
+      "confidence": "Text decal \"DOHC\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Engine_150cc_R",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 3740,
+      "confidence": "Text decal \"150cc\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Liquid_cooled_R",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 6320,
+      "confidence": "Text decal \"LIQUID COOLED\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Honda_engine",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 4170,
+      "confidence": "Text decal \"Honda\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Honda_tank",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 1830,
+      "confidence": "Text decal \"HONDA\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Honda_tank_under",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 4170,
+      "confidence": "Text decal \"Honda\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Coolant_sight_window_R",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 48,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Oil_sight_glass_ring_R",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 64,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Reserve_tank_level_marker_-10",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Reserve_tank_level_marker_0",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Reserve_tank_level_marker_10",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Engine_skid_plate",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Battery_label",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Regulator_rectifier",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Regulator_fin_00",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Regulator_fin_01",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Regulator_fin_02",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Regulator_fin_03",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Regulator_fin_04",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Exhaust_port_flange",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Cyl_cooling_fin_00",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Gold anodized cooling fin V7; visual, not Honda casting drawing."
+    },
+    {
+      "name": "Cyl_cooling_fin_01",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Gold anodized cooling fin V7; visual, not Honda casting drawing."
+    },
+    {
+      "name": "Cyl_cooling_fin_02",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Gold anodized cooling fin V7; visual, not Honda casting drawing."
+    },
+    {
+      "name": "Cyl_cooling_fin_03",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Gold anodized cooling fin V7; visual, not Honda casting drawing."
+    },
+    {
+      "name": "Cyl_cooling_fin_04",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Gold anodized cooling fin V7; visual, not Honda casting drawing."
+    },
+    {
+      "name": "Cyl_cooling_fin_05",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Gold anodized cooling fin V7; visual, not Honda casting drawing."
+    },
+    {
+      "name": "Cyl_cooling_fin_06",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Gold anodized cooling fin V7; visual, not Honda casting drawing."
+    },
+    {
+      "name": "Cyl_cooling_fin_07",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Gold anodized cooling fin V7; visual, not Honda casting drawing."
+    },
+    {
+      "name": "Head_cooling_fin_00",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Gold anodized cooling fin V7; visual, not Honda casting drawing."
+    },
+    {
+      "name": "Head_cooling_fin_01",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Gold anodized cooling fin V7; visual, not Honda casting drawing."
+    },
+    {
+      "name": "Head_cooling_fin_02",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Gold anodized cooling fin V7; visual, not Honda casting drawing."
+    },
+    {
+      "name": "Head_cooling_fin_03",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Gold anodized cooling fin V7; visual, not Honda casting drawing."
+    },
+    {
+      "name": "Head_cooling_fin_04",
+      "type": "MESH",
+      "collection": "04_ENGINE_COOLING",
+      "vertices": 8,
+      "confidence": "Gold anodized cooling fin V7; visual, not Honda casting drawing."
     },
     {
       "name": "RR_Drive_sprocket",
@@ -2722,6 +4997,76 @@
       "confidence": "Reference-informed estimate, no manufacturing dimensions available."
     },
     {
+      "name": "Muffler_chrome_tip",
+      "type": "MESH",
+      "collection": "05_DRIVETRAIN_EXHAUST",
+      "vertices": 64,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Muffler_tip_inner_sleeve",
+      "type": "MESH",
+      "collection": "05_DRIVETRAIN_EXHAUST",
+      "vertices": 64,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Exhaust_hanger_rubber",
+      "type": "MESH",
+      "collection": "05_DRIVETRAIN_EXHAUST",
+      "vertices": 32,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Chain_guard_extension",
+      "type": "MESH",
+      "collection": "05_DRIVETRAIN_EXHAUST",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Front_sprocket_cover_L",
+      "type": "MESH",
+      "collection": "05_DRIVETRAIN_EXHAUST",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Sprocket_damper_0",
+      "type": "MESH",
+      "collection": "05_DRIVETRAIN_EXHAUST",
+      "vertices": 24,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Sprocket_damper_1",
+      "type": "MESH",
+      "collection": "05_DRIVETRAIN_EXHAUST",
+      "vertices": 24,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Sprocket_damper_2",
+      "type": "MESH",
+      "collection": "05_DRIVETRAIN_EXHAUST",
+      "vertices": 24,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Sprocket_damper_3",
+      "type": "MESH",
+      "collection": "05_DRIVETRAIN_EXHAUST",
+      "vertices": 24,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Sprocket_damper_4",
+      "type": "MESH",
+      "collection": "05_DRIVETRAIN_EXHAUST",
+      "vertices": 24,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
       "name": "SEAT_77200_K56_N10",
       "type": "MESH",
       "collection": "06_BODY_K56F",
@@ -3056,6 +5401,769 @@
       "collection": "06_BODY_K56F",
       "vertices": 64,
       "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Honda_Wing_side_R_feather_00",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_side_R_feather_01",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_side_R_feather_02",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_side_R_feather_03",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_side_R_feather_04",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_side_R_feather_05",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_side_R_feather_06",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_side_R_center_body",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 482,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Honda_Wing_side_L_feather_00",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_side_L_feather_01",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_side_L_feather_02",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_side_L_feather_03",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_side_L_feather_04",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_side_L_feather_05",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_side_L_feather_06",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_side_L_center_body",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 482,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Honda_Wing_nose_feather_00",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing nose emblem V7; stylised chrome logo on front fairing."
+    },
+    {
+      "name": "Honda_Wing_nose_feather_01",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing nose emblem V7; stylised chrome logo on front fairing."
+    },
+    {
+      "name": "Honda_Wing_nose_feather_02",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing nose emblem V7; stylised chrome logo on front fairing."
+    },
+    {
+      "name": "Honda_Wing_nose_feather_03",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing nose emblem V7; stylised chrome logo on front fairing."
+    },
+    {
+      "name": "Honda_Wing_nose_feather_04",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing nose emblem V7; stylised chrome logo on front fairing."
+    },
+    {
+      "name": "Honda_Wing_nose_feather_05",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing nose emblem V7; stylised chrome logo on front fairing."
+    },
+    {
+      "name": "Honda_Wing_nose_feather_06",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing nose emblem V7; stylised chrome logo on front fairing."
+    },
+    {
+      "name": "Honda_Wing_nose_center_body",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 482,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Honda_Wing_mirror_L_feather_00",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_mirror_L_feather_01",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_mirror_L_feather_02",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_mirror_L_feather_03",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_mirror_L_feather_04",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_mirror_L_feather_05",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_mirror_L_feather_06",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_mirror_L_center_body",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 482,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Honda_Wing_mirror_R_feather_00",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_mirror_R_feather_01",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_mirror_R_feather_02",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_mirror_R_feather_03",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_mirror_R_feather_04",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_mirror_R_feather_05",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_mirror_R_feather_06",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_mirror_R_center_body",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 482,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Honda_Wing_fender_R_feather_00",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_fender_R_feather_01",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_fender_R_feather_02",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_fender_R_feather_03",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_fender_R_feather_04",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_fender_R_feather_05",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_fender_R_feather_06",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_fender_R_center_body",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 482,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Honda_Wing_fender_L_feather_00",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_fender_L_feather_01",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_fender_L_feather_02",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_fender_L_feather_03",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_fender_L_feather_04",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_fender_L_feather_05",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_fender_L_feather_06",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_fender_L_center_body",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 482,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Honda_Wing_barend_L_feather_00",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_barend_L_feather_01",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_barend_L_feather_02",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_barend_L_feather_03",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_barend_L_feather_04",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_barend_L_feather_05",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_barend_L_feather_06",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_barend_L_center_body",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 482,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Honda_Wing_barend_R_feather_00",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_barend_R_feather_01",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_barend_R_feather_02",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_barend_R_feather_03",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_barend_R_feather_04",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_barend_R_feather_05",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_barend_R_feather_06",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Honda Wing emblem V7; stylised chrome logo, not OEM artwork."
+    },
+    {
+      "name": "Honda_Wing_barend_R_center_body",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 482,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "GTR_decal_L",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 2040,
+      "confidence": "Text decal \"GTR\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Supra_decal_L",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 3610,
+      "confidence": "Text decal \"SUPRA\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Supra_150_L",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 1780,
+      "confidence": "Text decal \"150\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Sport_decal_L",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 3760,
+      "confidence": "Text decal \"SPORT\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "GTR_decal_R",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 2040,
+      "confidence": "Text decal \"GTR\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Supra_decal_R",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 3610,
+      "confidence": "Text decal \"SUPRA\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Supra_150_R",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 1780,
+      "confidence": "Text decal \"150\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Sport_decal_R",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 3760,
+      "confidence": "Text decal \"SPORT\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Honda_rear",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4170,
+      "confidence": "Text decal \"Honda\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Honda_nose",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 1830,
+      "confidence": "Text decal \"HONDA\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Honda_rear_top",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 1830,
+      "confidence": "Text decal \"HONDA\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Chevron_stripe_L_0",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Chevron_stripe_L_1",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Chevron_stripe_L_2",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Front_stripe_L",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Tail_stripe_L",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Side_leg_stripe_L",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Chevron_stripe_R_0",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Chevron_stripe_R_1",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Chevron_stripe_R_2",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Front_stripe_R",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Tail_stripe_R",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Side_leg_stripe_R",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Side_reflector_amber_L",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Side_reflector_amber_R",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Carbon_inner_duct_L",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Carbon_inner_duct_R",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Seat_rib_00",
+      "type": "CURVE",
+      "collection": "06_BODY_K56F",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Seat_rib_01",
+      "type": "CURVE",
+      "collection": "06_BODY_K56F",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Seat_rib_02",
+      "type": "CURVE",
+      "collection": "06_BODY_K56F",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Seat_rib_03",
+      "type": "CURVE",
+      "collection": "06_BODY_K56F",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Seat_rib_04",
+      "type": "CURVE",
+      "collection": "06_BODY_K56F",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Seat_rib_05",
+      "type": "CURVE",
+      "collection": "06_BODY_K56F",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Seat_rib_06",
+      "type": "CURVE",
+      "collection": "06_BODY_K56F",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Seat_rib_07",
+      "type": "CURVE",
+      "collection": "06_BODY_K56F",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Seat_center_seam",
+      "type": "CURVE",
+      "collection": "06_BODY_K56F",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Rear_mud_flap",
+      "type": "MESH",
+      "collection": "06_BODY_K56F",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
     },
     {
       "name": "FR_Winker_lens_-1",
@@ -3700,6 +6808,216 @@
       "collection": "07_CONTROLS_LIGHTS",
       "vertices": 80,
       "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Kick_start_label",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 2430,
+      "confidence": "Text decal \"START\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Headlight_DRL_L",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Headlight_DRL_R",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Headlight_projector_ring",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 576,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Headlight_projector_lens",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 482,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Headlight_reflector_bowl",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 482,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Reflector_red_L",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "RR_Reflector_red_R",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Side_stand_switch_L",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Side_stand_switch_wire_L",
+      "type": "CURVE",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Bank_angle_sensor",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Bank_angle_sensor_wire",
+      "type": "CURVE",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Bar_end_chrome_cap_L",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 64,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Start_button_L",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Bar_end_chrome_cap_R",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 64,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Start_button_R",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "TAIL_LED_segment_0",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "TAIL_LED_segment_1",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "TAIL_LED_segment_2",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 4,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Tail_lamp_chrome_ring",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 576,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Main_harness",
+      "type": "CURVE",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Starter_relay",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "License_lamp_bracket",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Throttle_cable_V7",
+      "type": "CURVE",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Clutch_cable_V7",
+      "type": "CURVE",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Front_brake_hose_V7",
+      "type": "CURVE",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": null,
+      "confidence": "Estimated route and section; control points editable."
+    },
+    {
+      "name": "Throttle_cable_housing_R",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Clutch_cable_housing_L",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Mirror_reflector_V7_L",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 32,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
+    },
+    {
+      "name": "Mirror_reflector_V7_R",
+      "type": "MESH",
+      "collection": "07_CONTROLS_LIGHTS",
+      "vertices": 32,
+      "confidence": "Reference-informed estimate, no manufacturing dimensions available."
     },
     {
       "name": "FR_Axle_nut_-1",
@@ -4505,6 +7823,223 @@
       "collection": "08_HARDWARE",
       "vertices": 8,
       "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "DOT4_decal",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 1730,
+      "confidence": "Text decal \"DOT4\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "Fork_axle_pinch_L_5",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "Fork_axle_pinch_L_20",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "Fork_axle_pinch_L_35",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "Fork_axle_pinch_R_5",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "Fork_axle_pinch_R_20",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "Fork_axle_pinch_R_35",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "FR_Caliper_bolt",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "FR_Caliper_bolt.001",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "License_plate_BG",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "License_plate_text",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 3820,
+      "confidence": "Text decal \"GTR 150\"; visual logo, not OEM typography."
+    },
+    {
+      "name": "License_plate_border_y_-1",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "License_plate_border_y_1",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "License_plate_border_z_-1",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "License_plate_border_z_1",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "License_plate_side_reflector_L",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "License_plate_side_bracket_L",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "License_plate_side_reflector_R",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "License_plate_side_bracket_R",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "License_plate_bracket",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 8,
+      "confidence": "Estimated geometry; nominal mounting arrangement inferred from K56F catalog."
+    },
+    {
+      "name": "Heatshield_extra_bolt",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "Heatshield_extra_bolt.001",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "Oil_drain_bolt_R",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "Skid_plate_bolt_L",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "Skid_plate_bolt_rear_L",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "Skid_plate_bolt_R",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "Skid_plate_bolt_rear_R",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "Sprocket_cover_bolt_L",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "Sprocket_cover_bolt_L.001",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "Exhaust_port_bolt_L",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
+    },
+    {
+      "name": "Exhaust_port_bolt_R",
+      "type": "MESH",
+      "collection": "08_HARDWARE",
+      "vertices": 168,
+      "confidence": "JIS-style flange bolt visual form; no OEM grade or thread pitch is claimed."
     }
   ],
   "lowest_objects": [
@@ -4515,6 +8050,30 @@
     [
       0.0,
       "RR_TIRE_120_70_17"
+    ],
+    [
+      0.04061957076191902,
+      "RR_TreadV7_0.00_033"
+    ],
+    [
+      0.04153670743107796,
+      "RR_TreadV7_0.00_047"
+    ],
+    [
+      0.044764697551727295,
+      "FR_TreadV7_0.00_038"
+    ],
+    [
+      0.04564987123012543,
+      "FR_TreadV7_0.00_026"
+    ],
+    [
+      0.04584334045648575,
+      "FR_TreadV7_-0.55_038"
+    ],
+    [
+      0.04584334045648575,
+      "FR_TreadV7_0.55_038"
     ],
     [
       0.046000003814697266,
@@ -4531,30 +8090,6 @@
     [
       0.046000003814697266,
       "RR_Sidewall_bead_1"
-    ],
-    [
-      0.061900004744529724,
-      "FR_Cast_rim_17inch"
-    ],
-    [
-      0.06389999389648438,
-      "FR_Rim_lip_-1"
-    ],
-    [
-      0.06389999389648438,
-      "FR_Rim_lip_1"
-    ],
-    [
-      0.07389998435974121,
-      "RR_Cast_rim_17inch"
-    ],
-    [
-      0.07589998841285706,
-      "RR_Rim_lip_-1"
-    ],
-    [
-      0.07589998841285706,
-      "RR_Rim_lip_1"
     ]
   ]
 }

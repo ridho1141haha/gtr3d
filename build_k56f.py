@@ -604,6 +604,810 @@ scene.view_settings.view_transform='AgX';scene.camera=hero
 scene.render.image_settings.file_format='PNG';scene.render.film_transparent=False
 scene.render.filepath=str(OUT/'preview_hero.png')
 
+# ============================================================================
+# V7 ENHANCEMENT (V2+V3+V4+V5+V6+V7 combined) — Honda Supra GTR 150 1:1 detail
+# Adds: PBR materials, Honda Wing emblems (5 locations), text decals (GTR/SUPRA/
+# 150/HONDA/PGM-FI/DOHC/NISSIN/DOT4/LIQUID COOLED/SPORT), white racing stripes,
+# LED headlight with DRL + projector lens, gold anodized USD fork, titanium brake
+# calipers with gold piston caps, chrome exhaust tip, license plate with text,
+# reflectors (amber/red), tire tread blocks (street sport pattern), cooling fins
+# (gold anodized), side stand switch, bank angle sensor, coolant sight, bar-end
+# weights with Honda wing, frame rail protectors, engine skid plate, chain guard
+# extension, sprocket dampers, carbon-look inner duct, seat ribs, brake hose
+# routing, tail lamp LED segments, fork gaiters, wheel hub chrome, battery label,
+# regulator/rectifier, main wiring harness, starter relay, rear axle nuts, mud
+# flap, exhaust port flange, engine mount plates, cables (throttle/clutch/brake).
+# ============================================================================
+
+# --- V7 Material library ---
+CHROME  = material('Chrome_plated_steel',  (.78,.80,.82), .98, .06)
+GOLD    = material('Anodized_gold_fork',   (.62,.48,.20), .85, .28)
+TITANI  = material('Titanium_caliper',     (.42,.38,.36), .72, .34)
+WDECAL  = material('White_paint_decal',    (.95,.95,.95), .06, .34)
+PLATEBG = material('License_plate_white',  (.92,.92,.92), .03, .50)
+PLATETX = material('License_plate_text',   (.05,.05,.05), .03, .55)
+AMBREF  = material('Amber_reflector',      (.95,.45,.05), .15, .20)
+REDREF  = material('Red_reflector',        (.85,.05,.05), .15, .20)
+LEDHUE  = material('LED_DRL_bright',       (.92,.96,1.0), .10, .12)
+CARBON  = material('Carbon_weave',         (.05,.06,.07), .35, .42)
+DARKSTK = material('Dark_sticker',         (.08,.08,.08), .15, .45)
+CHROME.node_tree.nodes.get('Principled BSDF').inputs['Coat Weight'].default_value = 1.0
+GOLD.node_tree.nodes.get('Principled BSDF').inputs['Coat Weight'].default_value = .65
+
+# --- V7 Helper functions ---
+def text_decal(name, text, loc, rot, size=.020, mat=None, ext=.0006, col='06_BODY_K56F'):
+    """3D extruded text for emblems/decals. Cleans up zero-area faces."""
+    if mat is None: mat = WDECAL
+    bpy.ops.object.text_add(location=loc, rotation=rot)
+    o=bpy.context.object
+    o.data.body=text; o.data.size=size; o.data.extrude=ext
+    o.data.align_x='CENTER'; o.data.align_y='CENTER'
+    o.data.bevel_depth=.0003; o.data.bevel_resolution=2
+    bpy.ops.object.convert(target='MESH')
+    # Cleanup degenerate geometry
+    bm=bmesh.new(); bm.from_mesh(o.data)
+    bad_faces=[f for f in bm.faces if f.calc_area()<1e-10]
+    if bad_faces: bmesh.ops.delete(bm, geom=bad_faces, context='FACES')
+    loose_verts=[v for v in bm.verts if not v.link_faces]
+    if loose_verts: bmesh.ops.delete(bm, geom=loose_verts, context='VERTS')
+    bm.to_mesh(o.data); bm.free(); o.data.update()
+    finish(o,name,mat,col)
+    o['geometry_confidence']='Text decal "%s"; visual logo, not OEM typography.'%text
+    o['reference_family']='K56F / FS150FG'
+    return o
+
+def cooling_fin(name,center,axis,length,width,thickness=.0018,count=14,pitch=.006,mat=None,col='04_ENGINE_COOLING'):
+    """Stack of thin cooling fins as proper 3D thin box slabs."""
+    if mat is None: mat = GOLD
+    axis=Vector(axis).normalized()
+    perp=axis.cross(Vector((0,0,1)))
+    if perp.length<.1: perp=Vector((1,0,0))
+    perp.normalize()
+    up=perp.cross(axis).normalized()
+    fins=[]
+    for i in range(count):
+        t=(i-(count-1)/2)*pitch
+        c=Vector(center)+axis*t
+        hw=width*(1-.05*i/count)/2
+        ht=thickness/2; hl=length/2
+        local_verts=[(-hw,-ht,-hl),(hw,-ht,-hl),(hw,ht,-hl),(-hw,ht,-hl),
+                     (-hw,-ht,hl),(hw,-ht,hl),(hw,ht,hl),(-hw,ht,hl)]
+        world_verts=[(c+perp*cl[0]+axis*cl[1]+up*cl[2]).to_tuple() for cl in local_verts]
+        faces=[(0,3,2,1),(4,5,6,7),(0,1,5,4),(2,3,7,6),(0,4,7,3),(1,2,6,5)]
+        m=bpy.data.meshes.new(name+'_%02d_mesh'%i); m.from_pydata(world_verts,[],faces); m.update()
+        o=bpy.data.objects.new(name+'_%02d'%i,m); COL[col].objects.link(o); o.parent=ROOT
+        if mat: m.materials.append(mat)
+        o['geometry_confidence']='Gold anodized cooling fin V7; visual, not Honda casting drawing.'
+        o['reference_family']='K56F / FS150FG'
+        fins.append(o)
+    return fins
+
+def tread_block(name,center,w,l,h,mat,col):
+    """Single tread block on tire surface."""
+    x,y,z=center
+    bpy.ops.mesh.primitive_cube_add(size=1,location=(x,y,z))
+    o=finish(bpy.context.object,name,mat,col)
+    o.scale=(w,l,h)
+    bpy.ops.object.transform_apply(location=False,rotation=False,scale=True)
+    return o
+
+def honda_wing_emblem_v7(name, center, side, scale=1.0, mat=None):
+    """Honda Wing emblem (7 chrome feathers + center body).
+    Flat on fairing surface. Wing extends in Y, feathers stacked in Z,
+    thickness in X (outward from fairing)."""
+    if mat is None: mat = CHROME
+    cx, cy, cz = center
+    s = side
+    wing_span = 0.045 * scale
+    wing_height = 0.025 * scale
+    wing_thick = 0.0020 * scale
+    feathers = []
+    for i in range(7):
+        feather_len = wing_span * (1.0 - abs(i - 3) * 0.12)
+        z_off = (i - 3) * wing_height / 7
+        y_root = cy - 0.002 * scale
+        y_tip = cy + feather_len * (1 if i % 2 == 0 else 0.85)
+        x_out = cx + s * wing_thick
+        fw = wing_height / 8
+        verts = [
+            (x_out, y_root, cz + z_off + fw),
+            (x_out, y_tip,  cz + z_off + fw * 0.7),
+            (x_out, y_tip,  cz + z_off - fw * 0.7),
+            (x_out, y_root, cz + z_off - fw),
+        ]
+        o = mesh(name+'_feather_%02d'%i, verts, [(0,1,2,3)], mat, '06_BODY_K56F')
+        m = o.modifiers.new('Emblem_thickness','SOLIDIFY'); m.thickness = wing_thick * 0.6; m.offset = 1.0
+        bevel(o, .0002 * scale, 2)
+        o['geometry_confidence'] = 'Honda Wing emblem V7; stylised chrome logo, not OEM artwork.'
+        o['reference_family'] = 'K56F / FS150FG'
+        feathers.append(o)
+    bpy.ops.mesh.primitive_uv_sphere_add(radius=0.004 * scale, location=(cx + s*wing_thick*0.5, cy, cz))
+    body = finish(bpy.context.object, name+'_center_body', mat, '06_BODY_K56F')
+    body.scale = (0.4, 1.2, 1.0)
+    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+    body['reference_family'] = 'K56F / FS150FG'
+    return feathers
+
+def honda_wing_nose_v7(name, center, scale=1.0, mat=None):
+    """Honda Wing emblem yang menghadap ke depan (untuk nose fairing).
+    Wing extends in X direction (left-right), thickness in Y (forward)."""
+    if mat is None: mat = CHROME
+    cx, cy, cz = center
+    wing_span = 0.070 * scale
+    wing_height = 0.030 * scale
+    wing_thick = 0.0035 * scale
+    normal = Vector((0, 0.7, 0.7)).normalized()
+    feathers = []
+    for i in range(7):
+        feather_len = wing_span * (1.0 - abs(i - 3) * 0.10)
+        z_off = (i - 3) * wing_height / 7
+        if i < 3:
+            x_tip = cx - feather_len; x_root = cx - 0.005 * scale
+        elif i > 3:
+            x_tip = cx + feather_len; x_root = cx + 0.005 * scale
+        else:
+            x_tip = cx + feather_len * 0.6; x_root = cx
+        base_pos = Vector((x_root if i != 3 else cx, cy, cz + z_off))
+        out_pos = base_pos + normal * wing_thick
+        tip_pos = Vector((x_tip, cy + 0.005 * scale, cz + z_off))
+        fw = wing_height / 7
+        verts = [
+            (out_pos.x, out_pos.y, out_pos.z + fw),
+            (tip_pos.x, tip_pos.y + wing_thick, tip_pos.z + fw * 0.7),
+            (tip_pos.x, tip_pos.y + wing_thick, tip_pos.z - fw * 0.7),
+            (out_pos.x, out_pos.y, out_pos.z - fw),
+        ]
+        o = mesh(name+'_feather_%02d'%i, verts, [(0,1,2,3)], mat, '06_BODY_K56F')
+        m = o.modifiers.new('Emblem_thickness','SOLIDIFY'); m.thickness = wing_thick * 0.4; m.offset = 1.0
+        bevel(o, .0003 * scale, 2)
+        o['geometry_confidence'] = 'Honda Wing nose emblem V7; stylised chrome logo on front fairing.'
+        o['reference_family'] = 'K56F / FS150FG'
+        feathers.append(o)
+    center_pos = Vector((cx, cy, cz)) + normal * wing_thick * 1.2
+    bpy.ops.mesh.primitive_uv_sphere_add(radius=0.006 * scale, location=center_pos)
+    body = finish(bpy.context.object, name+'_center_body', mat, '06_BODY_K56F')
+    body.scale = (1.3, 0.4, 1.0)
+    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+    body['reference_family'] = 'K56F / FS150FG'
+    return feathers
+
+# ============================================================================
+# 1. HONDA WING EMBLEMS — 5 locations
+# ============================================================================
+honda_wing_emblem_v7('Honda_Wing_side_R',  (0.198, 0.330, 0.680), +1, scale=1.6)
+honda_wing_emblem_v7('Honda_Wing_side_L',  (-0.198, 0.330, 0.680), -1, scale=1.6)
+honda_wing_nose_v7('Honda_Wing_nose',      (0, 0.650, 0.780), scale=1.5)
+for side in [-1, 1]:
+    honda_wing_emblem_v7('Honda_Wing_mirror_%s'%('R' if side>0 else 'L'),
+                        (side*0.345, 0.343, 1.075), side, scale=0.35)
+honda_wing_emblem_v7('Honda_Wing_fender_R',  (0.069, 0.620, 0.620), +1, scale=0.6)
+honda_wing_emblem_v7('Honda_Wing_fender_L',  (-0.069, 0.620, 0.620), -1, scale=0.6)
+for side in [-1, 1]:
+    honda_wing_emblem_v7('Honda_Wing_barend_%s'%('R' if side>0 else 'L'),
+                        (side*0.362, 0.272, 0.923), side, scale=0.25)
+
+# ============================================================================
+# 2. TEXT DECALS — GTR, SUPRA, 150, HONDA, PGM-FI, DOHC, NISSIN, DOT4, dll.
+# ============================================================================
+for side in [-1, 1]:
+    s = side
+    # "GTR" decal besar di tail cowl
+    text_decal('GTR_decal_%s'%('R' if s>0 else 'L'), 'GTR',
+               (s*0.118, -0.780, 0.775),
+               (pi/2, 0, pi/2 if s<0 else -pi/2),
+               size=0.060, mat=WDECAL, ext=0.0012)
+    # "SUPRA" decal besar di side fairing
+    text_decal('Supra_decal_%s'%('R' if s>0 else 'L'), 'SUPRA',
+               (s*0.205, 0.350, 0.660),
+               (pi/2, 0, pi/2 if s<0 else -pi/2),
+               size=0.050, mat=WDECAL, ext=0.0015)
+    # "150" decal di bawah SUPRA
+    text_decal('Supra_150_%s'%('R' if s>0 else 'L'), '150',
+               (s*0.210, 0.280, 0.620),
+               (pi/2, 0, pi/2 if s<0 else -pi/2),
+               size=0.040, mat=WDECAL, ext=0.0015)
+    # "PGM-FI" badge di engine
+    text_decal('PGMFI_%s'%('R' if s>0 else 'L'), 'PGM-FI',
+               (s*0.078, 0.030, 0.690),
+               (pi/2, 0, pi/2 if s<0 else -pi/2),
+               size=0.018, mat=CHROME, ext=0.0006, col='04_ENGINE_COOLING')
+    # "DOHC" badge di cam cover
+    text_decal('DOHC_%s'%('R' if s>0 else 'L'), 'DOHC',
+               (s*0.078, 0.235, 0.575),
+               (pi/2, -0.63, pi/2 if s<0 else -pi/2),
+               size=0.015, mat=CHROME, ext=0.0006, col='04_ENGINE_COOLING')
+    # "150cc" decal di engine side
+    text_decal('Engine_150cc_%s'%('R' if s>0 else 'L'), '150cc',
+               (s*0.135, -0.040, 0.380),
+               (pi/2, 0, pi/2 if s<0 else -pi/2),
+               size=0.010, mat=CHROME, ext=0.0004, col='04_ENGINE_COOLING')
+    # "LIQUID COOLED" decal di engine
+    text_decal('Liquid_cooled_%s'%('R' if s>0 else 'L'), 'LIQUID COOLED',
+               (s*0.115, 0.090, 0.370),
+               (pi/2, 0, pi/2 if s<0 else -pi/2),
+               size=0.006, mat=CHROME, ext=0.0003, col='04_ENGINE_COOLING')
+    # "SPORT" decal di side cover bawah
+    text_decal('Sport_decal_%s'%('R' if s>0 else 'L'), 'SPORT',
+               (s*0.150, 0.150, 0.250),
+               (pi/2, 0, pi/2 if s<0 else -pi/2),
+               size=0.014, mat=WDECAL, ext=0.0006)
+
+# "Honda" decal di rear fender bawah
+text_decal('Honda_rear', 'Honda',
+           (0, -1.055, 0.440), (pi/2, 0, 0),
+           size=0.024, mat=WDECAL, ext=0.0008)
+# "HONDA" di nose fairing (dekat wing emblem)
+text_decal('Honda_nose', 'HONDA',
+           (0, 0.580, 0.700), (1.2, 0, 0),
+           size=0.020, mat=CHROME, ext=0.0008)
+# "HONDA" di rear (atas tail lamp)
+text_decal('Honda_rear_top', 'HONDA',
+           (0, -0.910, 0.830), (pi/2, 0, 0),
+           size=0.018, mat=CHROME, ext=0.0008)
+# "Honda" di engine top
+text_decal('Honda_engine', 'Honda',
+           (0, 0.245, 0.580), (pi/2, -0.63, 0),
+           size=0.012, mat=CHROME, ext=0.0005, col='04_ENGINE_COOLING')
+# "HONDA" di fuel tank top
+text_decal('Honda_tank', 'HONDA',
+           (0, 0.235, 0.590), (0, 0, 0),
+           size=0.018, mat=CHROME, ext=0.0008, col='04_ENGINE_COOLING')
+# "Honda" di fuel tank under seat
+text_decal('Honda_tank_under', 'Honda',
+           (0, -0.450, 0.700), (pi/2, 0, 0),
+           size=0.014, mat=CHROME, ext=0.0006, col='04_ENGINE_COOLING')
+# "NISSIN" badge di brake caliper
+text_decal('Nissin_badge', 'NISSIN',
+           (0.110, FRONT.y - 0.060, FRONT.z + 0.060),
+           (pi/2, 0, -pi/2),
+           size=0.005, mat=WDECAL, ext=0.0002, col='02_FRONT_RUNNING_GEAR')
+# "DOT4" di brake fluid reservoir
+text_decal('DOT4_decal', 'DOT4',
+           (0.150, -0.392, 0.460), (pi/2, 0, -pi/2),
+           size=0.006, mat=WDECAL, ext=0.0003, col='08_HARDWARE')
+# "START" label di kick starter
+text_decal('Kick_start_label', 'START',
+           (0.175, -0.080, 0.480), (pi/2, 0, -pi/2),
+           size=0.008, mat=WDECAL, ext=0.0003, col='07_CONTROLS_LIGHTS')
+
+# ============================================================================
+# 3. WHITE RACING STRIPES / CHEVRONS pada bodywork merah
+# ============================================================================
+for side in [-1, 1]:
+    s = side
+    def spts(seq): return [(s*x, y, z) for x, y, z in seq]
+    # Chevron stripe di side fairing (3 segitiga putih bersusun)
+    for i in range(3):
+        y0 = 0.220 + i*0.085
+        verts = spts([
+            (0.132, y0, 0.690),
+            (0.165, y0 - 0.020, 0.700),
+            (0.132, y0 - 0.040, 0.690),
+            (0.132, y0, 0.680),
+        ])
+        panel('Chevron_stripe_%s_%d'%(('R' if s>0 else 'L'), i),
+              verts, WDECAL, '06_BODY_K56F', thick=0.0004)
+    # Stripe putih pada FRONT_TOP_wing (fairing depan atas)
+    verts = spts([
+        (0.079, 0.378, 0.851),
+        (0.155, 0.380, 0.837),
+        (0.150, 0.420, 0.820),
+        (0.075, 0.420, 0.835),
+    ])
+    panel('Front_stripe_%s'%('R' if s>0 else 'L'), verts, WDECAL, '06_BODY_K56F', thick=0.0004)
+    # Stripe putih pada TAIL_COVER
+    verts = spts([
+        (0.080, -0.820, 0.788),
+        (0.115, -0.700, 0.770),
+        (0.110, -0.650, 0.758),
+        (0.075, -0.780, 0.778),
+    ])
+    panel('Tail_stripe_%s'%('R' if s>0 else 'L'), verts, WDECAL, '06_BODY_K56F', thick=0.0004)
+    # Stripe pada SIDE_COVER_outer_leg
+    verts = spts([
+        (0.180, 0.380, 0.460),
+        (0.170, 0.280, 0.380),
+        (0.175, 0.270, 0.350),
+        (0.185, 0.370, 0.430),
+    ])
+    panel('Side_leg_stripe_%s'%('R' if s>0 else 'L'), verts, WDECAL, '06_BODY_K56F', thick=0.0004)
+
+# ============================================================================
+# 4. HEADLIGHT LED — DRL strip + projector lens + reflector bowl
+# ============================================================================
+# DRL strips (bright LED accent)
+for side in [-1, 1]:
+    s = side
+    verts = [
+        (s*0.065, 0.485, 0.985),
+        (s*0.005, 0.485, 0.990),
+        (s*0.005, 0.495, 0.982),
+        (s*0.065, 0.495, 0.977),
+    ]
+    panel('Headlight_DRL_%s'%('R' if s>0 else 'L'), verts, LEDHUE,
+          '07_CONTROLS_LIGHTS', thick=0.0015)
+
+# Chrome projector ring (lebih besar)
+bpy.ops.mesh.primitive_torus_add(major_radius=0.024, minor_radius=0.0020,
+                                  location=(0, 0.515, 0.920),
+                                  rotation=(pi/2, 0, 0))
+finish(bpy.context.object, 'Headlight_projector_ring', CHROME, '07_CONTROLS_LIGHTS')
+
+# Inner projector lens dome
+bpy.ops.mesh.primitive_uv_sphere_add(radius=0.022, location=(0, 0.520, 0.920))
+lens_dome = finish(bpy.context.object, 'Headlight_projector_lens', LENS, '07_CONTROLS_LIGHTS')
+lens_dome.scale = (1.0, 0.45, 1.0)
+bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+
+# Inner reflector (chrome bowl di belakang lens)
+bpy.ops.mesh.primitive_uv_sphere_add(radius=0.020, location=(0, 0.530, 0.920))
+reflector = finish(bpy.context.object, 'Headlight_reflector_bowl', CHROME, '07_CONTROLS_LIGHTS')
+reflector.scale = (1.0, 0.5, 1.0)
+bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+
+# ============================================================================
+# 5. FORK STANCHION GOLD (anodized USD look)
+# ============================================================================
+for side in [-1, 1]:
+    x = side * 0.091
+    rod('Fork_stanchion_gold_%s'%('R' if side>0 else 'L'),
+        (x, 0.545, 0.543), (x, 0.389, 0.920),
+        0.017, GOLD, '02_FRONT_RUNNING_GEAR')
+    rod('Fork_seal_retainer_%s'%('R' if side>0 else 'L'),
+        (x, 0.548, 0.540), (x, 0.543, 0.550),
+        0.026, CHROME, '02_FRONT_RUNNING_GEAR', vertices=48)
+    # Fork gaiter (rubber boot)
+    rod('Fork_gaiter_%s'%('R' if side>0 else 'L'),
+        (x, 0.580, 0.500), (x, 0.545, 0.560),
+        0.028, RUBBER, '02_FRONT_RUNNING_GEAR', vertices=32)
+    # Fork axle pinch bolts
+    for z_off in [0.005, 0.020, 0.035]:
+        bolt('Fork_axle_pinch_%s_%d'%(('R' if side>0 else 'L'), int(z_off*1000)),
+             x*1.28, 0.625, 0.321+z_off, 0.0045)
+
+# ============================================================================
+# 6. BRAKE CALIPERS — Titanium body + gold piston caps + Nissin badge
+# ============================================================================
+# Front brake caliper (titanium, gold pistons, large & visible)
+fr_cal_x = 0.094
+fr_cal_y = FRONT.y - 0.060
+fr_cal_z = FRONT.z + 0.060
+box('FR_Caliper_main', (fr_cal_x, fr_cal_y, fr_cal_z),
+    (0.040, 0.075, 0.090), TITANI, '02_FRONT_RUNNING_GEAR', 0.012)
+for i in range(2):
+    rod('FR_Caliper_piston_%d'%i,
+        (fr_cal_x + 0.022, fr_cal_y + (i-0.5)*0.025, fr_cal_z),
+        (fr_cal_x + 0.028, fr_cal_y + (i-0.5)*0.025, fr_cal_z),
+        0.011, GOLD, '02_FRONT_RUNNING_GEAR', vertices=32)
+box('FR_Caliper_pad_slot', (fr_cal_x - 0.005, fr_cal_y, fr_cal_z),
+    (0.012, 0.060, 0.080), DARKSTK, '02_FRONT_RUNNING_GEAR', 0.002)
+box('FR_Caliper_badge', (fr_cal_x + 0.021, fr_cal_y, fr_cal_z - 0.020),
+    (0.005, 0.020, 0.008), CHROME, '02_FRONT_RUNNING_GEAR', 0)
+for z_off in [-0.030, 0.030]:
+    bolt('FR_Caliper_bolt', fr_cal_x - 0.015, fr_cal_y, fr_cal_z + z_off, 0.005)
+rod('FR_Caliper_hose_nipple',
+    (fr_cal_x, fr_cal_y, fr_cal_z + 0.050),
+    (fr_cal_x + 0.010, fr_cal_y, fr_cal_z + 0.055),
+    0.006, CHROME, '02_FRONT_RUNNING_GEAR', vertices=16)
+
+# Rear brake caliper (titanium, smaller)
+rr_cal_x = 0.106
+rr_cal_y = REAR.y - 0.040
+rr_cal_z = REAR.z + 0.045
+box('RR_Caliper_main', (rr_cal_x, rr_cal_y, rr_cal_z),
+    (0.030, 0.055, 0.060), TITANI, '03_REAR_RUNNING_GEAR', 0.008)
+for i in range(2):
+    rod('RR_Caliper_piston_%d'%i,
+        (rr_cal_x + 0.018, rr_cal_y + (i-0.5)*0.018, rr_cal_z),
+        (rr_cal_x + 0.023, rr_cal_y + (i-0.5)*0.018, rr_cal_z),
+        0.008, GOLD, '03_REAR_RUNNING_GEAR', vertices=24)
+box('RR_Caliper_pad_slot', (rr_cal_x - 0.004, rr_cal_y, rr_cal_z),
+    (0.010, 0.045, 0.055), DARKSTK, '03_REAR_RUNNING_GEAR', 0.001)
+
+# ============================================================================
+# 7. TIRE TREAD BLOCKS — Street sport pattern (sparser, thinner)
+# ============================================================================
+def add_tread_v7(label, center, width, height):
+    col_name = '02_FRONT_RUNNING_GEAR' if label == 'FR' else '03_REAR_RUNNING_GEAR'
+    x, y, z = center
+    r = 0.2159 + height
+    hw = width / 2
+    num_blocks = 64 if label == 'FR' else 80
+    for i in range(num_blocks):
+        a = 2 * pi * i / num_blocks
+        ang_dist = abs(((a - pi + pi) % (2*pi)) - pi)
+        if ang_dist < 0.50: continue
+        for x_off_frac in [-0.55, 0.0, 0.55]:
+            bx = x + x_off_frac * hw
+            by = y + (r - 0.001) * sin(a)
+            bz = z + (r - 0.001) * cos(a)
+            if bz < 0.020: continue
+            chevron = 0.10 if (i % 2 == 0) else -0.10
+            if x_off_frac == 0.0:
+                block_size = (0.006, 0.012, 0.0020)
+            else:
+                block_size = (0.005, 0.008, 0.0025)
+            if abs(x_off_frac) > 0.3 and i % 2 != 0: continue
+            o = tread_block('%s_TreadV7_%s_%03d'%(label, '%.2f'%x_off_frac, i),
+                           (bx, by, bz), *block_size, RUBBER, col_name)
+            o.rotation_euler = (a + chevron, 0, 0)
+
+add_tread_v7('FR', FRONT, 0.090, 0.072)
+add_tread_v7('RR', REAR, 0.120, 0.084)
+
+# ============================================================================
+# 8. LICENSE PLATE — Visible di belakang rear wheel + side reflectors
+# ============================================================================
+# Plate background white
+plate_bg = box('License_plate_BG', (0, -1.110, 0.380),
+               (0.200, 0.005, 0.130), PLATEBG, '08_HARDWARE', 0.003)
+# Plate text "GTR 150"
+text_decal('License_plate_text', 'GTR 150',
+           (0, -1.113, 0.380), (pi/2, 0, 0),
+           size=0.045, mat=PLATETX, ext=0.0012, col='08_HARDWARE')
+# Plate border frame
+for side_y in [-1, 1]:
+    box('License_plate_border_y_%d'%side_y,
+        (0, -1.112, 0.380 + side_y*0.063),
+        (0.200, 0.003, 0.003), DARKSTK, '08_HARDWARE', 0)
+for side_z in [-1, 1]:
+    box('License_plate_border_z_%d'%side_z,
+        (side_z*0.100, -1.112, 0.380),
+        (0.003, 0.003, 0.130), DARKSTK, '08_HARDWARE', 0)
+# Side amber reflectors on plate
+for side in [-1, 1]:
+    s = side
+    box('License_plate_side_reflector_%s'%('R' if s>0 else 'L'),
+        (s*0.105, -1.110, 0.380),
+        (0.005, 0.008, 0.080), AMBREF, '08_HARDWARE', 0)
+    box('License_plate_side_bracket_%s'%('R' if s>0 else 'L'),
+        (s*0.080, -1.100, 0.420),
+        (0.005, 0.040, 0.080), DARK, '08_HARDWARE', 0.002)
+# Plate mounting bracket
+box('License_plate_bracket', (0, -1.080, 0.440),
+    (0.060, 0.060, 0.005), DARK, '08_HARDWARE', 0.002)
+
+# ============================================================================
+# 9. REFLECTORS — Front amber, side amber, rear red
+# ============================================================================
+# Front amber reflectors on fork legs
+for side in [-1, 1]:
+    x = side * 0.091
+    box('FR_Reflector_amber_%s'%('R' if side>0 else 'L'),
+        (x, 0.580, 0.430),
+        (0.020, 0.040, 0.012), AMBREF, '02_FRONT_RUNNING_GEAR', 0.003)
+# Side amber reflectors (larger, more visible)
+for side in [-1, 1]:
+    s = side
+    box('Side_reflector_amber_%s'%('R' if s>0 else 'L'),
+        (s*0.140, 0.450, 0.200),
+        (0.022, 0.080, 0.018), AMBREF, '06_BODY_K56F', 0.003)
+# Rear red reflectors
+for side in [-1, 1]:
+    s = side
+    box('RR_Reflector_red_%s'%('R' if s>0 else 'L'),
+        (s*0.060, -1.060, 0.410),
+        (0.018, 0.012, 0.040), REDREF, '07_CONTROLS_LIGHTS', 0.002)
+
+# ============================================================================
+# 10. CHROME EXHAUST TIP + HEAT SHIELD REFINEMENT
+# ============================================================================
+rod('Muffler_chrome_tip',
+    (0.201, -0.854, 0.528),
+    (0.202, -0.875, 0.534),
+    0.025, CHROME, '05_DRIVETRAIN_EXHAUST', vertices=32)
+rod('Muffler_tip_inner_sleeve',
+    (0.202, -0.860, 0.530),
+    (0.202, -0.875, 0.534),
+    0.020, DARKSTK, '05_DRIVETRAIN_EXHAUST', vertices=32)
+for y, z in [(-0.580, 0.480), (-0.680, 0.500)]:
+    bolt('Heatshield_extra_bolt', 0.275, y, z, 0.004)
+rod('Exhaust_hanger_rubber',
+    (0.190, -0.760, 0.520),
+    (0.186, -0.742, 0.680),
+    0.012, RUBBER, '05_DRIVETRAIN_EXHAUST', vertices=16)
+
+# ============================================================================
+# 11. SIDE STAND SWITCH + BANK ANGLE SENSOR + WIRING
+# ============================================================================
+box('Side_stand_switch_L',
+    (-0.140, -0.135, 0.260),
+    (0.018, 0.024, 0.014), BLACK, '07_CONTROLS_LIGHTS', 0.002)
+tube('Side_stand_switch_wire_L',
+     [(-0.140, -0.135, 0.270), (-0.130, -0.150, 0.310), (-0.115, -0.180, 0.360)],
+     0.0025, RUBBER, '07_CONTROLS_LIGHTS')
+box('Bank_angle_sensor',
+    (0.075, -0.250, 0.620),
+    (0.022, 0.030, 0.014), DARK, '07_CONTROLS_LIGHTS', 0.002)
+tube('Bank_angle_sensor_wire',
+     [(0.075, -0.250, 0.615), (0.060, -0.230, 0.590), (0.040, -0.200, 0.575)],
+     0.0022, RUBBER, '07_CONTROLS_LIGHTS')
+
+# ============================================================================
+# 12. COOLANT SIGHT WINDOW + OIL DRAIN BOLT + OIL LEVEL WINDOW
+# ============================================================================
+rod('Coolant_sight_window_R',
+    (0.143, 0.332, 0.485), (0.146, 0.332, 0.485),
+    0.008, LENS, '04_ENGINE_COOLING', vertices=24)
+bolt('Oil_drain_bolt_R', 0.110, 0.020, 0.245, 0.006)
+rod('Oil_sight_glass_ring_R',
+    (0.153, -0.108, 0.300), (0.156, -0.108, 0.300),
+    0.015, CHROME, '04_ENGINE_COOLING', vertices=32)
+for z_off in [-0.010, 0.000, 0.010]:
+    box('Reserve_tank_level_marker_%d'%int(z_off*1000),
+        (0.158, 0.300, 0.440 + z_off),
+        (0.002, 0.012, 0.001), DARKSTK, '04_ENGINE_COOLING', 0)
+
+# ============================================================================
+# 13. HANDLEBAR BAR-END WEIGHTS + SWITCH BUTTONS
+# ============================================================================
+for side in [-1, 1]:
+    s = side
+    rod('Bar_end_chrome_cap_%s'%('R' if s>0 else 'L'),
+        (s*0.359, 0.272, 0.923), (s*0.362, 0.272, 0.923),
+        0.014, CHROME, '07_CONTROLS_LIGHTS', vertices=32)
+    box('Start_button_%s'%('R' if s>0 else 'L'),
+        (s*0.222, 0.270, 0.940),
+        (0.008, 0.006, 0.004), RED if s>0 else DARK, '07_CONTROLS_LIGHTS', 0)
+
+# ============================================================================
+# 14. FRAME RAIL PROTECTOR + ENGINE GUARD PLATE
+# ============================================================================
+for side in [-1, 1]:
+    s = side
+    tube('Frame_rail_protector_%s'%('R' if s>0 else 'L'),
+         [(s*0.030, 0.435, 0.776), (s*0.065, 0.310, 0.655)],
+         0.024, RUBBER, '01_CHASSIS')
+box('Engine_skid_plate',
+    (0, 0.020, 0.225),
+    (0.220, 0.180, 0.008), DARK, '04_ENGINE_COOLING', 0.005)
+for side in [-1, 1]:
+    bolt('Skid_plate_bolt_%s'%('R' if side>0 else 'L'),
+         side*0.090, 0.080, 0.225, 0.005)
+    bolt('Skid_plate_bolt_rear_%s'%('R' if side>0 else 'L'),
+         side*0.090, -0.040, 0.225, 0.005)
+
+# ============================================================================
+# 15. CHAIN GUARD EXTENSION + SPROCKET DETAIL
+# ============================================================================
+panel('Chain_guard_extension',
+      [(-0.105, -0.450, 0.425), (-0.105, -0.580, 0.420),
+       (-0.095, -0.580, 0.410), (-0.095, -0.450, 0.415)],
+      BLACK, '05_DRIVETRAIN_EXHAUST', 0.004)
+box('Front_sprocket_cover_L',
+    (-0.110, -0.140, 0.360),
+    (0.018, 0.060, 0.080), BLACK, '05_DRIVETRAIN_EXHAUST', 0.003)
+for y_off in [-0.020, 0.020]:
+    bolt('Sprocket_cover_bolt_L', -0.120, -0.140 + y_off, 0.395, 0.004)
+# Rear sprocket rubber dampers
+for i in range(5):
+    a = i * 2 * pi / 5
+    rad = 0.040
+    rod('RR_Sprocket_damper_%d'%i,
+        (-0.094, rear_sprocket.y + rad*sin(a), rear_sprocket.z + rad*cos(a)),
+        (-0.090, rear_sprocket.y + rad*sin(a), rear_sprocket.z + rad*cos(a)),
+        0.006, RUBBER, '05_DRIVETRAIN_EXHAUST', vertices=12)
+
+# ============================================================================
+# 16. CARBON-LOOK INNER DUCT PANEL
+# ============================================================================
+for side in [-1, 1]:
+    s = side
+    panel('Carbon_inner_duct_%s'%('R' if s>0 else 'L'),
+          [(s*0.146, 0.195, 0.500), (s*0.158, 0.545, 0.700),
+           (s*0.140, 0.560, 0.650), (s*0.130, 0.215, 0.460)],
+          CARBON, '06_BODY_K56F', 0.0008)
+
+# ============================================================================
+# 17. SEAT RIBS + CENTER SEAM (ribbed vinyl texture)
+# ============================================================================
+for i in range(8):
+    y_pos = -0.050 - i * 0.095
+    tube('Seat_rib_%02d'%i,
+         [(0, y_pos, 0.790), (0, y_pos - 0.040, 0.792)],
+         0.0015, SEATMAT, '06_BODY_K56F')
+tube('Seat_center_seam',
+     [(0, -0.030, 0.792), (0, -0.780, 0.790)],
+     0.0012, DARKSTK, '06_BODY_K56F')
+
+# ============================================================================
+# 18. BRAKE HOSE ROUTING + ABS SENSOR WIRE
+# ============================================================================
+box('FR_brake_hose_bracket',
+    (0.105, 0.490, 0.520),
+    (0.012, 0.018, 0.025), DARK, '02_FRONT_RUNNING_GEAR', 0.003)
+tube('FR_wheel_speed_sensor_wire',
+     [(0.090, 0.620, 0.310), (0.105, 0.580, 0.360), (0.108, 0.500, 0.430)],
+     0.0020, RUBBER, '02_FRONT_RUNNING_GEAR')
+box('RR_brake_hose_clip',
+    (0.110, -0.450, 0.360),
+    (0.010, 0.020, 0.012), DARK, '03_REAR_RUNNING_GEAR', 0.002)
+
+# ============================================================================
+# 19. TAIL LAMP LED SEGMENTS + CHROME RING
+# ============================================================================
+for i in range(3):
+    z_off = 0.770 - i * 0.018
+    panel('TAIL_LED_segment_%d'%i,
+          [(-0.060, -0.945, z_off), (0.060, -0.945, z_off),
+           (0.060, -0.948, z_off - 0.005), (-0.060, -0.948, z_off - 0.005)],
+          LEDHUE, '07_CONTROLS_LIGHTS', 0.0010)
+bpy.ops.mesh.primitive_torus_add(major_radius=0.045, minor_radius=0.0012,
+                                  location=(0, -0.945, 0.745),
+                                  rotation=(pi/2, 0, 0))
+finish(bpy.context.object, 'Tail_lamp_chrome_ring', CHROME, '07_CONTROLS_LIGHTS')
+
+# ============================================================================
+# 20. WHEEL HUB DECALS + RIM EDGE DETAIL + VALVE STEM
+# ============================================================================
+for label, center in [('FR', FRONT), ('RR', REAR)]:
+    col_name = '02_FRONT_RUNNING_GEAR' if label == 'FR' else '03_REAR_RUNNING_GEAR'
+    width = 0.090 if label == 'FR' else 0.120
+    rod('%s_Hub_center_cap'%label,
+        (0, center.y, center.z), (0.005, center.y, center.z),
+        0.020, CHROME, col_name, vertices=32)
+    rod('%s_Hub_center_cap_L'%label,
+        (0, center.y, center.z), (-0.005, center.y, center.z),
+        0.020, CHROME, col_name, vertices=32)
+    for side in [-1, 1]:
+        s = side
+        rod('%s_Axle_nut_cover_%s'%(label, 'R' if s>0 else 'L'),
+            (s*0.115, center.y, center.z), (s*0.120, center.y, center.z),
+            0.013, CHROME, col_name, vertices=24)
+    # Rim lip chrome accent
+    rw = (width/2) * 0.73
+    ring('%s_Rim_lip_chrome'%label, center,
+         [(-rw*.95, 0.225), (-rw*.95, 0.228), (-rw*.85, 0.228), (-rw*.85, 0.225)],
+         CHROME, col_name, 96)
+    # Hub chrome ring
+    rod('%s_Hub_chrome_ring'%label,
+        (0, center.y, center.z), (0.001, center.y, center.z),
+        0.043, CHROME, col_name, vertices=64)
+    rod('%s_Hub_chrome_ring_L'%label,
+        (0, center.y, center.z), (-0.001, center.y, center.z),
+        0.043, CHROME, col_name, vertices=64)
+    # Valve stem
+    rod('%s_Valve_stem'%label,
+        (center.x + 0.045, center.y, center.z + 0.215),
+        (center.x + 0.050, center.y, center.z + 0.218),
+        0.003, CHROME, col_name, vertices=12)
+
+# ============================================================================
+# 21. BATTERY LABEL + REGULATOR RECTIFIER + MAIN WIRING HARNESS
+# ============================================================================
+box('Battery_label', (0, -0.187, 0.615),
+    (0.060, 0.080, 0.001), DARKSTK, '04_ENGINE_COOLING', 0)
+box('Regulator_rectifier',
+    (-0.110, -0.180, 0.580),
+    (0.030, 0.045, 0.020), SILVER, '04_ENGINE_COOLING', 0.005)
+for i in range(5):
+    box('Regulator_fin_%02d'%i,
+        (-0.110, -0.180 + i*0.008, 0.590),
+        (0.032, 0.001, 0.018), SILVER, '04_ENGINE_COOLING', 0)
+tube('Main_harness',
+     [(0.050, -0.180, 0.570), (0.040, -0.080, 0.590),
+      (0.030, 0.020, 0.610), (0.020, 0.150, 0.640),
+      (0.010, 0.280, 0.700), (0.005, 0.380, 0.780)],
+     0.008, RUBBER, '07_CONTROLS_LIGHTS')
+box('Starter_relay',
+    (0.080, -0.210, 0.590),
+    (0.022, 0.025, 0.018), BLACK, '07_CONTROLS_LIGHTS', 0.002)
+
+# ============================================================================
+# 22. SWINGARM CHAIN SLIDER + REAR AXLE NUTS
+# ============================================================================
+for side in [-1, 1]:
+    s = side
+    rod('RR_Axle_nut_%s'%('R' if s>0 else 'L'),
+        (s*0.115, REAR.y, REAR.z), (s*0.125, REAR.y, REAR.z),
+        0.018, CHROME, '03_REAR_RUNNING_GEAR', vertices=6)
+    rod('RR_Axle_cotter_pin_%s'%('R' if s>0 else 'L'),
+        (s*0.122, REAR.y + 0.012, REAR.z),
+        (s*0.122, REAR.y + 0.012, REAR.z + 0.008),
+        0.001, STEEL, '03_REAR_RUNNING_GEAR', vertices=8)
+panel('Swingarm_chain_slider_L',
+      [(-0.108, -0.200, 0.395), (-0.108, -0.350, 0.392),
+       (-0.098, -0.350, 0.388), (-0.098, -0.200, 0.391)],
+      RUBBER, '03_REAR_RUNNING_GEAR', 0.003)
+
+# ============================================================================
+# 23. TAIL TIDY + MUD FLAP
+# ============================================================================
+panel('Rear_mud_flap',
+      [(-0.075, -1.095, 0.359), (0.075, -1.095, 0.359),
+       (0.065, -1.180, 0.300), (-0.065, -1.180, 0.300)],
+      BLACK, '06_BODY_K56F', 0.003)
+box('License_lamp_bracket',
+    (0, -0.960, 0.730),
+    (0.090, 0.020, 0.015), DARK, '07_CONTROLS_LIGHTS', 0.002)
+
+# ============================================================================
+# 24. EXHAUST HEADER PORT + CYLINDER/HEAD COOLING FINS + ENGINE MOUNT PLATES
+# ============================================================================
+box('Exhaust_port_flange',
+    (0.030, 0.230, 0.490),
+    (0.022, 0.015, 0.025), DARK, '04_ENGINE_COOLING', 0.003)
+for side in [-1, 1]:
+    bolt('Exhaust_port_bolt_%s'%('R' if side>0 else 'L'),
+         0.030 + side*0.010, 0.230, 0.490, 0.004)
+
+# Cooling fins (gold anodized) on cylinder
+cooling_fin('Cyl_cooling_fin', (0, 0.115, 0.450), (0, 1, 0),
+            length=0.060, width=0.060, thickness=0.0015,
+            count=8, pitch=0.007, mat=GOLD, col='04_ENGINE_COOLING')
+# Cooling fins on cylinder head
+cooling_fin('Head_cooling_fin', (0, 0.215, 0.540), (0, 1, 0),
+            length=0.040, width=0.080, thickness=0.0012,
+            count=5, pitch=0.006, mat=GOLD, col='04_ENGINE_COOLING')
+
+# Engine mounting plates
+for side in [-1, 1]:
+    s = side
+    box('Engine_mount_plate_%s'%('R' if s>0 else 'L'),
+        (s*0.105, 0.020, 0.450),
+        (0.010, 0.080, 0.060), DARK, '01_CHASSIS', 0.004)
+
+# ============================================================================
+# 25. THROTTLE / CLUTCH / BRAKE CABLES (thicker, visible)
+# ============================================================================
+tube('Throttle_cable_V7',
+     [(0.226, 0.290, 0.921), (0.180, 0.310, 0.880),
+      (0.130, 0.320, 0.820), (0.090, 0.290, 0.720),
+      (0.060, 0.200, 0.650), (0.050, 0.090, 0.620)],
+     0.0040, RUBBER, '07_CONTROLS_LIGHTS')
+tube('Clutch_cable_V7',
+     [(-0.216, 0.302, 0.914), (-0.150, 0.315, 0.860),
+      (-0.110, 0.270, 0.770), (-0.130, 0.180, 0.660),
+      (-0.140, 0.050, 0.580), (-0.137, -0.046, 0.448)],
+     0.0040, RUBBER, '07_CONTROLS_LIGHTS')
+tube('Front_brake_hose_V7',
+     [(0.183, 0.322, 0.931), (0.150, 0.350, 0.870),
+      (0.120, 0.380, 0.790), (0.100, 0.420, 0.680),
+      (0.094, 0.480, 0.580), (0.094, 0.540, 0.480),
+      (0.094, 0.580, 0.420)],
+     0.0045, RUBBER, '07_CONTROLS_LIGHTS')
+# Cable housings at handlebar end
+box('Throttle_cable_housing_R',
+    (0.215, 0.295, 0.920),
+    (0.020, 0.012, 0.008), BLACK, '07_CONTROLS_LIGHTS', 0.002)
+box('Clutch_cable_housing_L',
+    (-0.210, 0.305, 0.915),
+    (0.020, 0.012, 0.008), BLACK, '07_CONTROLS_LIGHTS', 0.002)
+
+# ============================================================================
+# 26. MIRROR GLASS (larger, with chrome trim)
+# ============================================================================
+for side in [-1, 1]:
+    s = side
+    # Remove existing mirror reflector if any
+    name = 'Mirror_reflector_%s'%('R' if s>0 else 'L')
+    if name in bpy.data.objects:
+        old = bpy.data.objects[name]
+        for c in list(old.users_collection): c.objects.unlink(old)
+        bpy.data.objects.remove(old, do_unlink=True)
+    # Larger mirror glass
+    glass_points = [(s*0.299 + 0.050*cos(i*2*pi/32), 0.342, 1.068 + 0.028*sin(i*2*pi/32))
+                    for i in range(32)]
+    panel('Mirror_reflector_V7_%s'%('R' if s>0 else 'L'),
+          glass_points, MIRROR, '07_CONTROLS_LIGHTS', 0.0010)
+
+# ============================================================================
+# 27. SUBDIVISION SURFACE untuk bodywork smoother
+# ============================================================================
+body_panel_prefixes = ['SIDE_COVER_upper_', 'SIDE_COVER_outer_leg_',
+                       'FRONT_TOP_wing_', 'FRONT_TOP_center_',
+                       'TAIL_COVER_', 'SEAT_', 'FENDER_A_FR_']
+for o in list(bpy.data.objects):
+    if o.type != 'MESH': continue
+    if not any(o.name.startswith(p) for p in body_panel_prefixes): continue
+    for p in o.data.polygons: p.use_smooth = True
+    if 'Subsurf_V7' not in [m.name for m in o.modifiers]:
+        m = o.modifiers.new('Subsurf_V7', 'SUBSURF')
+        m.levels = 1
+        m.render_levels = 2
+
+print('V7_ENHANCEMENT_COMPLETE', flush=True)
+
 # UVs per part, consistent normals and visible origin at each object's geometry centre.
 # Panels retain solidify/bevel stacks; no destructive overall scaling.
 bpy.ops.object.select_all(action='DESELECT')
